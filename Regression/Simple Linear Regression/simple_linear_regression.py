@@ -6,7 +6,7 @@ is a machine learning model called Simple Linear Regression.
 
 # Simple Linear Regression
 
-#Importing the Libraries
+# Importing the Libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
