@@ -1,3 +1,11 @@
+"""
+This is a multiple linear regression model using backward elimination method where we learn
+the correlation between training set and test set with all various predictors i.e. independent
+variables that predict the profits of the startups based on its various Independent variables
+using backward using a method called backward elimination where we find the final table of best
+predictors for optimal prediction of the profits.
+"""
+
 # Multiple Linear Regression
 
 # Importing the libraries
@@ -30,7 +38,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, rando
 from sklearn.preprocessing import StandardScaler
 sc_x = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
-x_test = sc_X.transform(x_test)
+x_test = sc_x.transform(x_test)
 sc_y = StandardScaler()
 y_train = sc_y.fit_transform(y_train)
 """
