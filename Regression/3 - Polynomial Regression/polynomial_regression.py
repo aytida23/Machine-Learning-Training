@@ -1,7 +1,3 @@
-"""
-This is the code for the polynomial regression model.
-"""
-
 # Polynomial Regression
 
 # Importing the libraries
@@ -36,3 +32,14 @@ sc_y = StandardScaler()
 y_train = sc_y.fit_transform(y_train)
 """
 
+# Fitting linear regression to the dataset
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(x, y)
+
+# Fitting polynomial regression to the dataset
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree = 2)
+x_poly = poly_reg.fit_transform(x)
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(x_poly, y) #polynomial regression model is created and ready to reveal truth or bluff 
