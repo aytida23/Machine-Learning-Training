@@ -1,3 +1,9 @@
+"""
+This is the code for Polynomial Regression where we predict whether the employee is talking the
+truth or bluff about his/her past company's salary he/she used to get, we use a dataset where we
+have the dataset of different position with their levels and salary of their previous company.
+"""
+
 # Polynomial Regression
 
 # Importing the libraries
@@ -39,7 +45,31 @@ lin_reg.fit(x, y)
 
 # Fitting polynomial regression to the dataset
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(degree = 2)
+poly_reg = PolynomialFeatures(degree = 4)
 x_poly = poly_reg.fit_transform(x)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(x_poly, y) #polynomial regression model is created and ready to reveal truth or bluff 
+
+# Visualising the Linear Regression results
+plt.scatter(x, y, color = 'red')
+plt.plot(x, lin_reg.predict(x), color = 'green')
+plt.title("Truth or Bluff (Linear Regression)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
+
+
+# to create more advanced plot of the curve, we can have the prediction from 1 to 10 incremented by
+# higher resolution like 0.1 step by sacrificing some simplicity in the code
+# create new x here called x_grid that contain all levels with resolution of 0.1 step
+x_grid = np.arange(min(x), max(x), 0.1)
+x_grid = x_grid.reshape((len(x_grid), 1))
+
+# Visualising the Polynomial Regression results
+#you will get a more continuous curve which is actually the real curve of polynomial regression itself
+plt.scatter(x, y, color = 'red')
+plt.plot(x_grid, lin_reg_2.predict(poly_reg.fit_transform(x_grid)), color = 'green')
+plt.title("Truth or Bluff (Polynomial Regression)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
