@@ -3,7 +3,6 @@ This is the code for Polynomial Regression where we predict whether the employee
 truth or bluff about his/her past company's salary he/she used to get, we use a dataset where we
 have the dataset of different position with their levels and salary of their previous company.
 """
-
 # Polynomial Regression
 
 # Importing the libraries
@@ -73,3 +72,11 @@ plt.title("Truth or Bluff (Polynomial Regression)")
 plt.xlabel("Position Level")
 plt.ylabel("Salary")
 plt.show()
+
+# Predicting a new result with Linear Regression
+# the employee of position level 6.5's predicted salary only on Linear Regression 
+lin_reg.predict(6.5)
+
+# Predicting a new result with Polynomial Regression
+# the employee of position level 6.5's predicted salary only on Polynomial Regression
+lin_reg_2.predict(poly_reg.fit_transform(6.5))
